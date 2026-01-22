@@ -50,6 +50,10 @@
       font-weight:500;
     }
 
+    nav a[aria-current="page"]{
+      opacity:.6;
+    }
+
     .intro{
       padding:4rem var(--gutter) 2rem;
       max-width:var(--grid-max);
@@ -122,6 +126,18 @@
 
     @media(max-width:900px){
       :root{--gutter:24px}
+
+      /* NAV MOBILE FIX: horizontal scroll */
+      nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem;
+        padding-bottom: 0.5rem;
+      }
+      nav a {
+        flex: 0 0 auto;
+        white-space: nowrap;
+      }
     }
   </style>
 
@@ -176,7 +192,7 @@
       <article class="card">
         <a href="projects/paperminds.html">
           <div class="thumb"></div>
-          <p class="tag">Prestige Tv Series</p>
+          <p class="tag">Prestige TV Series</p>
           <h3>PaperMinds</h3>
           <p class="meta">Development</p>
         </a>
@@ -194,7 +210,7 @@
       <article class="card">
         <a href="projects/the-secretary.html">
           <div class="thumb"></div>
-          <p class="tag">DRAMA SERIES</p>
+          <p class="tag">Drama Series</p>
           <h3>The Secretary</h3>
           <p class="meta">Development</p>
         </a>
