@@ -2,18 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Behind the Scenes — Clearview</title>
+  <title>BTS – Clearview</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --charcoal:#0F0F11;
-      --surface:#181818;
       --off-white:#F5F5F3;
       --muted:#9A9A9A;
       --gutter:128px;
@@ -26,17 +22,17 @@
       font-family:'Inter',sans-serif;
       background:var(--charcoal);
       color:var(--off-white);
-      line-height:1.55;
+      line-height:1.5;
     }
 
-    h1{
+    h1,h2,h3{
       font-family:'Playfair Display',serif;
       font-weight:700;
-      font-size:clamp(2rem,4vw,3.5rem);
+      letter-spacing:.02em;
     }
 
-    p{font-size:.9rem}
-
+    h1{font-size:clamp(2rem,4vw,3.5rem)}
+    p{max-width:65ch;margin-bottom:1rem}
     a{color:inherit;text-decoration:none}
 
     header{
@@ -65,19 +61,26 @@
       margin:auto;
     }
 
-    .section-header{
-      padding:4rem var(--gutter) 1rem;
+    h1{
+      padding:4rem var(--gutter) 2rem;
     }
 
     .grid{
+      --min:260px;
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      grid-template-columns:repeat(auto-fit,minmax(var(--min),1fr));
       gap:2rem;
-      padding:1rem var(--gutter) 4rem;
+      padding:2rem var(--gutter) 4rem;
     }
 
     .card{
-      background:var(--surface);
+      background:#181818;
+      transition:background .4s, transform .4s;
+    }
+
+    .card:hover{
+      background:#1e1e1e;
+      transform:translateY(-4px);
     }
 
     .card img{
@@ -85,12 +88,11 @@
       aspect-ratio:1;
       object-fit:cover;
       background:#333;
-      display:block;
     }
 
     .card p{
       padding:.75rem 1rem;
-      color:var(--muted);
+      font-size:.875rem;
     }
 
     footer{
@@ -99,8 +101,39 @@
       color:var(--muted);
     }
 
+    /* --- MOBILE --- */
     @media(max-width:900px){
       :root{--gutter:24px}
+    }
+
+    @media(max-width:600px){
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:.5rem;
+        height:auto;
+        padding:1rem var(--gutter);
+      }
+      nav{
+        margin-left:0;
+        flex-wrap:wrap;
+        gap:.75rem;
+        font-size:.85rem;
+      }
+      h1{
+        padding:2rem var(--gutter) 1rem;
+        text-align:center;
+      }
+      .grid{
+        grid-template-columns:1fr;
+        gap:1.5rem;
+        padding:1.5rem var(--gutter) 3rem;
+      }
+      footer{
+        padding:2rem var(--gutter);
+        text-align:center;
+        font-size:.8rem;
+      }
     }
   </style>
 </head>
@@ -108,10 +141,8 @@
 <body>
 
 <header>
-  <div style="font-family:'Playfair Display',serif;font-size:1.25rem">
-    Clearview
-  </div>
-  <nav aria-label="Primary Navigation">
+  <div style="font-family:'Playfair Display',serif;font-size:1.25rem">Clearview</div>
+  <nav>
     <a href="index.html">Home</a>
     <a href="projects.html">Projects</a>
     <a href="bts.html" aria-current="page">BTS</a>
@@ -122,41 +153,29 @@
 </header>
 
 <main>
+  <h1>Behind the Scenes</h1>
 
-  <!-- PAGE HEADER -->
-  <section class="section-header">
-    <h1>Behind the Scenes</h1>
-    <p style="margin-top:1rem;max-width:65ch;color:var(--muted)">
-      Practical production work, rehearsals, set construction, and on-set process
-      from traditionally produced projects.
-    </p>
-  </section>
-
-  <!-- BTS GRID -->
   <section class="grid">
-
     <article class="card">
-      <img src="" alt="Practical set construction for interior scene">
+      <img src="" alt="Practical set construction placeholder">
       <p>Practical set construction for interior scene</p>
     </article>
 
     <article class="card">
-      <img src="" alt="Lighting setup for night exterior">
+      <img src="" alt="Lighting setup placeholder">
       <p>Lighting setup for night exterior</p>
     </article>
 
-    <!-- Duplicate cards as needed -->
-
+    <!-- Add more BTS cards as needed -->
   </section>
-
 </main>
 
 <footer>
-  © <span id="year"></span> Clearview. All rights reserved.
+  © <span id="y"></span> Clearview. All rights reserved.
 </footer>
 
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('y').textContent = new Date().getFullYear();
 </script>
 
 </body>
