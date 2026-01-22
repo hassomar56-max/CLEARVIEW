@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Behind the Scenes — Clearview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --charcoal:#0F0F11;
+      --surface:#181818;
+      --off-white:#F5F5F3;
+      --muted:#9A9A9A;
+      --gutter:128px;
+      --grid-max:1440px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:var(--charcoal);
+      color:var(--off-white);
+      line-height:1.55;
+    }
+
+    h1{
+      font-family:'Playfair Display',serif;
+      font-weight:700;
+      font-size:clamp(2rem,4vw,3.5rem);
+    }
+
+    p{font-size:.9rem}
+
+    a{color:inherit;text-decoration:none}
+
+    header{
+      height:64px;
+      display:flex;
+      align-items:center;
+      padding:0 var(--gutter);
+      max-width:var(--grid-max);
+      margin:auto;
+    }
+
+    nav{
+      margin-left:auto;
+      display:flex;
+      gap:2rem;
+      font-weight:500;
+      font-size:.9rem;
+    }
+
+    nav a[aria-current="page"]{
+      opacity:.6;
+    }
+
+    main{
+      max-width:var(--grid-max);
+      margin:auto;
+    }
+
+    .section-header{
+      padding:4rem var(--gutter) 1rem;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:2rem;
+      padding:1rem var(--gutter) 4rem;
+    }
+
+    .card{
+      background:var(--surface);
+    }
+
+    .card img{
+      width:100%;
+      aspect-ratio:1;
+      object-fit:cover;
+      background:#333;
+      display:block;
+    }
+
+    .card p{
+      padding:.75rem 1rem;
+      color:var(--muted);
+    }
+
+    footer{
+      padding:4rem var(--gutter);
+      font-size:.85rem;
+      color:var(--muted);
+    }
+
+    @media(max-width:900px){
+      :root{--gutter:24px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div style="font-family:'Playfair Display',serif;font-size:1.25rem">
+    Clearview
+  </div>
+  <nav aria-label="Primary Navigation">
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="bts.html" aria-current="page">BTS</a>
+    <a href="development.html">Development</a>
+    <a href="cg.html">CG & VP</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- PAGE HEADER -->
+  <section class="section-header">
+    <h1>Behind the Scenes</h1>
+    <p style="margin-top:1rem;max-width:65ch;color:var(--muted)">
+      Practical production work, rehearsals, set construction, and on-set process
+      from traditionally produced projects.
+    </p>
+  </section>
+
+  <!-- BTS GRID -->
+  <section class="grid">
+
+    <article class="card">
+      <img src="" alt="Practical set construction for interior scene">
+      <p>Practical set construction for interior scene</p>
+    </article>
+
+    <article class="card">
+      <img src="" alt="Lighting setup for night exterior">
+      <p>Lighting setup for night exterior</p>
+    </article>
+
+    <!-- Duplicate cards as needed -->
+
+  </section>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Clearview. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

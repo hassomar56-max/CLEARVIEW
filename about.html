@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>About – Clearview</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{--charcoal:#0F0F11;--off-white:#F5F5F3;--gutter:128px;--grid-max:1440px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--charcoal);color:var(--off-white);line-height:1.5}
+    h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700}
+    h1{font-size:clamp(2rem,4vw,3.5rem)}
+    header{height:64px;display:flex;align-items:center;padding:0 var(--gutter);max-width:var(--grid-max);margin:auto}
+    nav{margin-left:auto;display:flex;gap:2rem;font-weight:500}
+    .about{display:flex;align-items:center;gap:4rem;padding:4rem var(--gutter);max-width:var(--grid-max);margin:auto}
+    .about__text{flex:1}
+    .about__img{flex:1;height:400px;background:#222}
+    footer{padding:4rem var(--gutter);font-size:.875rem;opacity:.6}
+    @media(max-width:900px){:root{--gutter:24px}.about{flex-direction:column;text-align:center}}
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div style="font-family:'Playfair Display',serif;font-size:1.25rem">Clearview</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="bts.html">BTS</a>
+      <a href="development.html">Development</a>
+      <a href="cg.html">CG & VP</a>
+      <a href="about.html" aria-current="page">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="about">
+      <div class="about__text">
+        <h1>About Clearview</h1>
+        <p style="margin-top:1rem">Clearview is a film and television company founded on traditional production craft. We use AI and CG strictly as development tools—never as shortcuts—to deliver disciplined, investor-ready content from idea to final master.</p>
+        <p style="margin-top:1rem"><strong>Founder / Director – Mmikaeya Tanka</strong><br>
+        Lifelong film enthusiast, on-set veteran, and the mining-sector’s silent partner: when a resource group wants to prosper, they fly in Mmikaeya. He brings the same geological eye for hidden value to storytelling—spotting the vein others miss, then extracting it with precision.</p>
+      </div>
+      <div class="about__img" title="Mmikaeya Tanka portrait placeholder"></div>
+    </section>
+  </main>
+
+  <footer>© <span id="y"></span> Clearview. All rights reserved.</footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
